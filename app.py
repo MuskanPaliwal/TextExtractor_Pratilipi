@@ -20,7 +20,7 @@ class GetText(object):
     def __init__(self, file):
         self.file = pytesseract.image_to_string(Image.open(project_dir + '/images/' + file))
 
-@app.route('/', method=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         if 'photo' not in request.files:
