@@ -15,5 +15,9 @@ photos = UploadSet('photos', IMAGES)
 app.config['Debug'] = True
 app.config['UPLOAD_FOLDER'] = 'images'
 
+class GetText(object):
+
+    def __init__(self, file):
+        self.file = pytesseract.image_to_string(Image.open(project_dir + '/images/' + file))
 
 
