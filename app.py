@@ -20,4 +20,21 @@ class GetText(object):
     def __init__(self, file):
         self.file = pytesseract.image_to_string(Image.open(project_dir + '/images/' + file))
 
+@app.route('/', method=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        if 'photo' not in request.files:
+            return 'there is no photo in the form'
+        name = request.form['img-name'] + '.jpg'
+        photo = request.files['photo']
+        path = os.path.join(app.config['UPLOAD_FOLDER'], name)
+        photo.save(path)
 
+        textObject = GetText(name)
+        print('TEXT OBJECT ' + textObject.file)
+
+        return textObject.file
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run()
