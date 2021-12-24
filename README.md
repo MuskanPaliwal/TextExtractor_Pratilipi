@@ -55,11 +55,11 @@ Simply extracts texts from an image using the PIL library of python and shows on
    ```
   
 6. **Tesseract installation - for Windows OS**
-  ```shell
+    ```shell
   
-  $ sudo apt install tesseract-ocr
+    $ sudo apt install tesseract-ocr
   
-  ```
+    ```
 
 7. **setup flask environment and run app**
     ```shell
