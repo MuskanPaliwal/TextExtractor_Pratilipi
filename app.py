@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import os, pytesseract
 from flask_uploads import UploadSet, configure_uploads, IMAGES
-from PIL import Image
+import Image
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
 
